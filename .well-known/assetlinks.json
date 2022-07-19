@@ -1,0 +1,18 @@
+"intentFilters": [
+  {
+    "action": "VIEW",
+    "autoVerify": true,
+    "data": [
+      {
+        "scheme": "https",
+        "host": "*.dattran.one",
+        "pathPrefix": "/login.html"
+      }
+    ],
+    "category": [
+      "BROWSABLE",
+      "DEFAULT"
+    ]
+  }
+]
+
