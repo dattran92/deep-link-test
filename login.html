@@ -1,8 +1,32 @@
-<script>
-	function login() {
-		window.location.replace('dlt://login');
-	}
-</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+
 <button onclick="login()">
 Login with app
 </button>
+<br/>
+<div id="message"></div>
+
+<script>
+	function checkLogin() {
+		const username = Cookies.get('username')
+		if (username) {
+			document.getElementById('message').innerHTML = 'Logged in with username ' + username;
+			return true;
+		}
+		return false;
+	}
+
+	function login() {
+		window.location.replace('dlt://login');
+		const interval = setInterval(() => {
+			const result = checkLogin();
+			if (result) {
+				clearInterval(interval);
+			}
+		}, 1000);
+	}
+
+
+	checkLogin();
+</script>
+

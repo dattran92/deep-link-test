@@ -1,0 +1,23 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+
+<h1 id="message">Loading...</h1>
+
+<script>
+	function doLogin() {
+		const params = new Proxy(new URLSearchParams(window.location.search), {
+			get: (searchParams, prop) => searchParams.get(prop),
+		});
+		const username = params.username;
+		if (!username) {
+			document.getElementById('message').innerHTML = 'Login error';
+		} else {
+			Cookies.set('username', username);
+			document.getElementById('message').innerHTML = 'Login with the name ' + username;
+		}
+	}
+
+	doLogin();
+</script>
+
+
+
