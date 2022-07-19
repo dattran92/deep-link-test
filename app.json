@@ -2,6 +2,7 @@
   "expo": {
     "name": "deep-link-test",
     "slug": "deep-link-test",
+    "scheme": "dlt",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,7 +25,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "dat.deeplinktest"
     },
     "web": {
       "favicon": "./assets/favicon.png"
