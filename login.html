@@ -3,6 +3,9 @@
 <button onclick="login()">
 Login with app
 </button>
+<button onclick="logout()">
+Logout
+</button>
 <br/>
 <div id="message"></div>
 
@@ -13,6 +16,7 @@ Login with app
 			document.getElementById('message').innerHTML = 'Logged in with username ' + username;
 			return true;
 		}
+		document.getElementById('message').innerHTML = '';
 		return false;
 	}
 
@@ -26,6 +30,10 @@ Login with app
 		}, 1000);
 	}
 
+	function logout() {
+		Cookies.remove('username');
+		checkLogin();
+	}
 
 	checkLogin();
 </script>
